@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+<head>
+<title>Personal Website</title>
+<link rel="icon" type="image/x-icon" href="favicon2.ico">	
+<link href="pagedesign.css" rel="stylesheet" type="text/css">	
+<link href="PictureSlide.css" rel="stylesheet" type="text/css">
+<link href="profile.css" rel="stylesheet" type="text/css">
+<link href="TableWeakness.css" rel="stylesheet" type="text/css">	
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+<style>
+body{
+  background-image: url('darksky.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+</style>	
+</head>
+
+	<body>
+<div class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size:50px"></h1>
+  </div>
+</div>
+		
+<audio controls autoplay>
+	<source src="comedy.ogg" type="audio/ogg">
+  <source src="comedy.mp3" type="audio/mpeg">
+</audio>		
+<!-- Header -->
+<header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
+  <h1 class="w3-xlarge;" style="color:white">WELCOME TO MY MAIN PAGE</h1>
+
+  <div class="w3-padding-32">
+    <div class="w3-bar w3-border">
+      <a href="index.html" class="w3-bar-item w3-button w3-light-grey" target="_blank">Home</a>
+      <a href="leisureMain.html" class="w3-bar-item w3-button w3-light-grey" target="_blank">Chill</a>
+	  <a href="leisure.html" class="w3-bar-item w3-button w3-light-grey" target="_blank">Picture</a>	
+      <a href="Feedback.html" class="w3-bar-item w3-button w3-light-grey" target="_blank">Contact</a>
+    </div>
+  </div>
+</header>
+	
+	<body>
+	<!-- Images used to open the lightbox -->
+<h2 style="color:white; text-align:center" ><strong><em>Click On The Picture To See My Journey</em></strong></h2>
+
+<div class="row">
+  <div class="column">
+    <img src="BlackCat.jpg" width="90%" onclick="openModal();currentSlide(1)" class="hover-shadow" alt="Black Cat">
+  </div>
+  <div class="column">
+    <img src="CatKeychain.jpg" width="90%" onclick="openModal();currentSlide(2)" class="hover-shadow" alt="Cat keychain">
+  </div>
+  <div class="column">
+    <img src="RubberHand.jpg" width="90%" onclick="openModal();currentSlide(3)" class="hover-shadow" alt="Sawah_Padi">
+  </div>
+  <div class="column">
+    <img src="BookHand.jpg" width="90%" onclick="openModal();currentSlide(4)" class="hover-shadow" alt="Steamboat">
+  </div>
+</div>
+
+<!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="AlissyaGather.jpg" style="width:100%" alt="">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="BendangSawah.jpg" style="width:100%" alt="Happy Eid Mubarak">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="nightsawah.jpg" style="width:100%" alt="Sawah Padi Picture">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="Steamboatpicture.jpg" style="width:100%" height="" alt="Steamboat">
+    </div>
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Caption text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+	  
+	  <div class="column">
+      <img class="demo cursor" src="BlackCat.jpg" style="width:90%" onclick="currentSlide(1)" alt="Celebrate The Feast At Alissya's House">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="CatKeychain.jpg" style="width:90%" onclick="currentSlide(2)" alt="Playing At Paddy Field">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="RubberHand.jpg" style="width:90%" onclick="currentSlide(3)" alt="Iman Idea But More Like Leads">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="BookHand.jpg" style="width:90%" onclick="currentSlide(4)" alt="First Time Iftar Together">
+    </div>
+
+  </div>
+</div>
+
+<script>
+// Open the Modal
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+		
+		<!-- About Section -->
+  <div class="w3-row w3-padding-64" id="Aman">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <video width="620" height="640" controls>
+  <source src="AmanCentral.mp4" type="video/mp4">
+    </video>
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+	  <h2 style="color:white; text-align:center" ><strong>Trip<em> </em>To<em> </em>Aman Central During Weekend</strong></h2>	
+      <p class="w3-large" style="color:white">This voyage is not a long one, but it is a short one that runs from UITM Arau to Aman Central. We were a little hurried to get on the train at first, but luck was on our side and we arrived on time. When we arrive, the first thing we do is look around the mall to figure out what we want to do. Of course, there is a lot to do because we arrived in the afternoon. But first, we ate separately, with some going to Daboya Cafe and others to 4Fingers.Now is the time for everyone to have a good time. By playing in the arcade, which is a place where everyone plays video games. We play for nearly two hours since it is so much fun.</p><br>
+		
+      <p class="w3-large w3-text-grey w3-hide-medium">Finally, everyone started bowling, despite not knowing how to play like a pro. So, while we were waiting for the train, we went to Aman Tower. Taking pictures in the park, playing in the rain, and eating ice cream. So that's what we do on our way to Aman Central. But there's still much to do on the night, such as finding a restaurant serving delectable dishes like sizzling, lam chop, and satay.</p>
+    </div>
+  </div>
+		
+  <!-- Picture Section -->
+  <div class="w3-row w3-padding-64" id="House">
+    <div class="w3-col l6 w3-padding-large">
+      <h2 style="color:white; text-align:center" ><strong>Celebrate<em> </em>Hari<em> </em>Raya At Alissya House With Classmate</strong></h2>	
+      <p class="w3-large" style="color:white">This was one of the most surprising happenings that occurred during our stay at the UITM Arau dormitory. We had a great time eating and chatting at this time. We also got lost on our way to her place, but happily, we were all able to there on time. First and foremost, we ate "lontong" made by Alissya's mother. This is some of the best meals I've had in Perlis. Then everyone walked outside to find serenity, such as taking pictures and admiring the environment.</p><br>
+		
+      <p class="w3-large w3-text-grey w3-hide-medium"><i>"We are friends and I do like to pass the day with you in serious and inconsequential chatter. I wouldn’t mind washing up beside you, dusting beside you, reading the back half of the paper while you read the front. We are friends and I would miss you, do miss you and think of you very often." – Jeanette Winterson.</i></p>    
+    </div>
+    
+    <div class="w3-col l6 w3-padding-large">
+      <img src="NightAtHouse.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+    </div>
+  </div>
+		
+<!-- About Section -->
+  <div class="w3-row w3-padding-64" id="Night">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <video width="620" height="640" controls>
+  <source src="TrendTiktok.mp4" type="video/mp4">
+    </video>
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+	  <h2 style="color:white; text-align:center" ><strong>Trying<em> </em>Tiktok<em> </em>Trend With Everyone</strong></h2><br>	
+      <p class="w3-large" style="color:white"><i>"Close friends are truly life's treasures. Sometimes they know us better than we know ourselves. With gentle honesty, they are there to guide and support us, to share our laughter and our tears. Their presence reminds us that we are never really alone." -Vincent Van Gogh</i></p><br>
+		
+     
+    </div>
+  </div>
+		
+	<h2 style="color:white; text-align:center" ><strong>About Myself</strong></h2>	
+
+
+<table id="customers">
+  <tr>
+    <th>What Am I Good At?</th>
+    <th>Explaination</th>
+    
+  </tr>
+  <tr>
+    <td>Am I good at studying?</td>
+    <td>I am not that good but I still can study certain subject with good explaination and guide</td>
+    
+  </tr>
+  <tr>
+    <td>What do I usually do?</td>
+    <td>Watching Anime or reading Manga during my free time</td>
+      
+  </tr>
+ 
+  <tr>
+    <td>What is the most favourite thing I do?</td>
+    <td>Creating memories with friends such as travelling with them</td>
+    
+  </tr>
+  <tr>
+    <td>What is my favourite animal?</td>
+    <td>Of course it is cat because the cat is cute and fluffy</td>
+   
+  </tr>	
+	
+</table>
+<br>	
+		<br>	
+		
+<h2 style="text-align:center;color:white">I , Me and Myself</h2>
+
+<div class="card">
+  <img src="Myself.jpg" alt="John" style="width:100%">
+  <h1>Afiq Danial</h1>
+  <p class="title">Student</p>
+  <p><h5>Universiti Teknologi MARA</h5></p>
+  <p class="w3-large"><i>"I loved anime,reading Manga and Manhwa,listening to japanese music and playing games</i></p><br>
+ 
+  <div style="margin: 24px 0;">
+    <a href="https://www.instagram.com/afiqzx._/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a> 
+    <a href="https://twitter.com/afiqdanial0502" target="_blank"><i class="fa fa-twitter"></i></a>  
+    <a href="https://www.youtube.com/channel/UCgmNrq82uIsXghZ1lSLUaGg" target="_blank"><i class="fa fa-youtube"></i></a>  
+    <a href="https://www.facebook.com/Reversezx" target="_blank"><i class="fa fa-facebook"></i></a> 
+  </div>
+</div>
+		
+
+		
+			
+	</body>
+		
+<footer class="w3-center w3-padding-48 w3-large" >
+</footer>		
+
+
+
+</body>
+</html>

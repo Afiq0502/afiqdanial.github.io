@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<title>Picture</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">	
+<link href="leisurepage.css" rel="stylesheet" type="text/css">	
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+	
+	
+<style>
+body{
+  background-image: url('anime1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+</style>
+</head>
+
+<body>
+	
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>MOST FAVOURITE PLACE</b></h1>
+  <p>Welcome to the dream of <span class="w3-tag">unknown</span></p>
+</header>
+	
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">ABOUT JAPAN</h3>
+  <p class="w3-center"><em>I love Japan</em></p>
+  <p>There are numerous reasons to visit Japan, as the country has something to appeal to practically every type of traveller. Whether you want to learn about Japanese history and culture, sample Japanese cuisine, or ride the lightning-fast Shinkansen trains, a vacation to Japan promises adventure around every corner. Food is extremely significant in Japanese culture, and you'll be able to enjoy a wide variety of the many exquisite foods that comprise Japanese cuisine while visiting the nation. From sushi and ramen to Sukiyaki (beef hot pot) and Yakiniku (Japanese BBQ), Japan has an unlimited amount of foods guaranteed to make your mouth water.</p>
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <p><b><i class="fa fa-user w3-margin-right"></i>Click Me!</b></p><br>
+      <img src="nana.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="400" height="333">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p>Manga and anime are probably Japan's most visible cultural exports, and they represent one of the world's most recognisable art forms. However, the world of Japanese animation is far more diverse and sophisticated than we in the West think. 'Anime' solely refers to Japanese animation as a whole in the West. In Japanese culture, anime refers to any mass-produced animation, whether Japanese or non-Japanese. Importantly, anime is not merely a kid's culture in Japan. Rather, anime programmes such as Neon Genesis Evangelion, Attack on Titan, Death Note, and Cowboy Bebop were highly popular with adults as well.</p>
+    </div>
+  </div>
+	</div>	
+	
+<div class="bg-image img1"></div>
+<div class="bg-image img2"></div>
+<div class="bg-image img3"></div>
+<div class="bg-image img4"></div>
+<div class="bg-image img5"></div>
+<div class="bg-image img6"></div>
+
+<div class="bg-text">JAPAN</div>
+	
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="index.html" class="w3-bar-item w3-button" target="_blank">HOME</a>
+    <a href="leisureMain.html" class="w3-bar-item w3-button w3-hide-small" target="_blank"><i class="fa fa-th"></i> CHILL</a>
+	<a href="leisure.html" class="w3-bar-item w3-button w3-hide-small" target="_blank"><i class="fa fa-picture-o"></i> PICTURE</a> 
+    <a href="Feedback.html" class="w3-bar-item w3-button w3-hide-small" target="_blank"><i class="fa fa-envelope"></i> CONTACT</a>
+   
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+  </div>
+</div>
+
+	
+	<!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a class="w3-bar-item w3-button w3-hover-black">«</a>
+	  <a href="leisureMain.html" class="w3-bar-item w3-button w3-hover-black" target="_blank">1</a>	
+	  <a class="w3-bar-item w3-button w3-hover-black target=_blank">2</a>	
+      <a class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+	
+	
+	<script>
+		
+	// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+		
+	// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+	
+	
+	
+	</script>
+
+<footer class="w3-center w3-padding-48 w3-large" >
+</footer>
+
+</body>
+</html>
